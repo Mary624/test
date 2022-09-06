@@ -25,7 +25,7 @@ bool sort_files(string a, string b) {
     int last1 = stoi(a.substr(a.find_last_of(' ') + 1));
     int last2 = stoi(b.substr(b.find_last_of(' ') + 1));
     if (last1 != last2)
-        return last1 > last2;
+        return last1 < last2;
     char* char_array1 = new char[a.length() + 1];
     char* char_array2 = new char[b.length() + 1];
     strcpy_s(char_array1, a.size() + 1, a.c_str());
@@ -149,7 +149,7 @@ private:
 
 public:
     void start() {
-        add_nodes("example.txt");
+        add_nodes("example2.txt");
         sort_children(nodes);
         for (Node& node : nodes) {
             print_children(node, 0);
